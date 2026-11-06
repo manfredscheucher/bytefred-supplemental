@@ -2,9 +2,15 @@
 
 Snake in the terminal, controlled with a breadboard controller through an Arduino, as shown in [this video](https://www.youtube.com/shorts/PYbnNydN6qM).
 
+| File | Purpose |
+| --- | --- |
+| `arduino-controller.ino` | runs on the Arduino, sends A0, A1, A2, A3 (up, left, right, down) over serial |
+| `test-controller.py` | prints the pressed directions, to check the controller |
+| `snake-game.py` | the game |
+
 ## Run
 
-1. Upload `test1_arduino_IDE/test1_arduino_IDE.ino` to the Arduino. It sends the analog values of A0, A1, A2 and A3 (up, left, right, down) over serial.
+1. Upload `arduino-controller.ino` to the Arduino. The Arduino IDE will offer to move it into a folder of the same name, which is fine.
 
 2. Install pyserial:
 
@@ -12,10 +18,10 @@ Snake in the terminal, controlled with a breadboard controller through an Arduin
    pip install pyserial
    ```
 
-3. Optionally check the controller. This prints the pressed directions:
+3. Optionally check the controller:
 
    ```bash
-   python3 test2_python_interface/test2_python_interface.py
+   python3 test-controller.py
    ```
 
 4. Start the game:

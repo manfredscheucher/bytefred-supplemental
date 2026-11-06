@@ -5,9 +5,9 @@ The adder itself is shown on a breadboard in [this video](https://youtube.com/sh
 
 | Script | Verifies | Method |
 | --- | --- | --- |
-| `python-bruteforce.py` | 2-bit adder | tries all inputs |
-| `python-SMT-2bit.py` | 2-bit adder | z3 |
-| `python-SMT-kbit.py` | k-bit adder | z3 |
+| `bruteforce-2bit.py` | 2-bit adder | tries all inputs |
+| `smt-2bit.py` | 2-bit adder | z3 |
+| `smt-kbit.py` | k-bit adder | z3 |
 
 ## Run
 
@@ -18,11 +18,11 @@ pip install z3-solver
 ```
 
 ```bash
-python3 python-bruteforce.py
-python3 python-SMT-2bit.py
-python3 python-SMT-kbit.py 8
+python3 bruteforce-2bit.py
+python3 smt-2bit.py
+python3 smt-kbit.py 8
 ```
 
-The argument of `python-SMT-kbit.py` is the number of bits.
+The argument of `smt-kbit.py` is the number of bits.
 
 Bruteforce runtime grows exponentially with the number of input bits, so it doesn't scale to larger circuits. The SMT scripts handle larger setups easily.
