@@ -4,16 +4,24 @@ Snake in the terminal, controlled with a breadboard controller through an Arduin
 
 ## Run
 
-The script needs pyserial:
+1. Upload `test1_arduino_IDE/test1_arduino_IDE.ino` to the Arduino. It sends the analog values of A0, A1, A2 and A3 (up, left, right, down) over serial.
 
-```bash
-pip install pyserial
-```
+2. Install pyserial:
 
-```bash
-python3 snake-game.py
-```
+   ```bash
+   pip install pyserial
+   ```
 
-## Arduino
+3. Optionally check the controller. This prints the pressed directions:
 
-The Arduino sketch is not included. The script expects the Arduino on `/dev/ttyACM0` at 9600 baud, sending the analog values of A0, A1, A2 and A3 (up, left, right, down) as one line of space-separated numbers. To use another port, change it in the script.
+   ```bash
+   python3 test2_python_interface/test2_python_interface.py
+   ```
+
+4. Start the game:
+
+   ```bash
+   python3 snake-game.py
+   ```
+
+Both Python scripts expect the Arduino on `/dev/ttyACM0`. To use another port, change it in the script.
